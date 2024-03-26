@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/default_layout}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+
+
+	<!-- bootstrap css 적용 -->
+    <!--    <link rel="stylesheet" th:href="@{/css/page/home.css}" >-->
+
+<!-- index.html 고유 CSS 추가 -->
+<th:block layout:fragment="css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+      .bd-placeholder-img {font-size: 1.125rem; text-anchor: middle; -webkit-user-select: none; -moz-user-select: none; user-select: none;}
+      @media (min-width: 768px) {.bd-placeholder-img-lg {font-size: 3.5rem;}}
+      .b-example-divider {height: 3rem; background-color: rgba(0, 0, 0, .1); border: solid rgba(0, 0, 0, .15); border-width: 1px 0; ox-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);}
+      .b-example-vr {flex-shrink: 0; width: 1.5rem; height: 100vh;}
+      .bi {vertical-align: -.125em; fill: currentColor;}
+      .nav-scroller {position: relative; z-index: 2; height: 2.75rem; overflow-y: hidden;}
+      .nav-scroller .nav {display: flex; flex-wrap: nowrap; padding-bottom: 1rem; margin-top: -1px; overflow-x: auto; text-align: center; white-space: nowrap; -webkit-overflow-scrolling: touch;}
+    </style>
+</th:block>
+
+<!-- index.html 고유 스크립트 추가 -->
+<th:block layout:fragment="script">
+	<!-- bootstrap js 적용 -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	<meta name="theme-color" content="#712cf9">
+    <!--    <script th:src="@{/js/page/home.js}"></script>-->
+</th:block>
+
+</head>
+<body>
+	<div layout:fragment="content">
+<!-- form태그를 통한 search -->
+		<div class="container">
+			<form>
+				<div class="input-group">
+					<select class="form-select" aria-label="Default select example">
+						<option selected>숙박 형태 선택</option>
+					    <option value="모텔">모텔</option>
+					    <option value="호텔">호텔</option>
+					    <option value="가족형">가족형 숙소</option>
+					    <option value="펜션">펜션</option>
+					    <option value="비지니스">비지니스 호텔</option>
+					</select>
+					<select class="form-select" aria-label="Default select example">
+					  <option selected>숙박 인원 선택</option>
+					  <option value="1">1인</option>
+					  <option value="2">2인</option>
+					  <option value="3">3인</option>
+					  <option value="4">4인</option>
+					  <option value="5">5인 이상</option>
+					</select>
+					<input type="date" class="calendar" name="r_start">
+				    <input type="date" class="calendar" name="r_end">
+				 	<input type="search" class="form-control" placeholder="숙박 희망 지역을 입력해 주세요." aria-label="Recipient's username with two button addons">
+				 	<button class="btn btn-outline-secondary" type="search">검색</button>
+				</div>
+			</form>
+		</div>
+	  <div class="album py-5 bg-light">
+	    <div class="container">
+	      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-5">
+	        <div class="col">
+	          <div class="card shadow-sm">
+	            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">호텔</text></svg>
+	            <div class="card-body">
+	              <p class="card-text">호텔/리조트</p>
+	              <div class="d-flex justify-content-between align-items-center">
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col">
+	          <div class="card shadow-sm">
+	            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">펜션</text></svg>
+	            <div class="card-body">
+	              <p class="card-text">펜션</p>
+	              <div class="d-flex justify-content-between align-items-center">
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col">
+	          <div class="card shadow-sm">
+	            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">모텔</text></svg>
+	            <div class="card-body">
+	              <p class="card-text">모텔</p>
+	              <div class="d-flex justify-content-between align-items-center">
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col">
+	          <div class="card shadow-sm">
+	            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">가족형</text></svg>
+	            <div class="card-body">
+	              <p class="card-text">가족형</p>
+	              <div class="d-flex justify-content-between align-items-center">
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col">
+	          <div class="card shadow-sm">
+	            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">비지니스</text></svg>
+	            <div class="card-body">
+	              <p class="card-text">비지니스</p>
+	              <div class="d-flex justify-content-between align-items-center">
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	       </div>
+	      </div>
+	     </div>
+	  <div class="album py-5 bg-light">
+	    <div class="container">
+	      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-5">
+	        <div class="col">
+	          <div class="card shadow-sm">
+	            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">호텔 추천 숙소1</text></svg>
+	          </div>
+	        </div>
+	        <div class="col">
+	          <div class="card shadow-sm">
+	            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">펜션 추천 숙소1</text></svg>
+	          </div>
+	        </div>
+	        <div class="col">
+	          <div class="card shadow-sm">
+	            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">모텔 추천 숙소1</text></svg>
+	          </div>
+	        </div>
+	        <div class="col">
+	          <div class="card shadow-sm">
+	            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">가족형 추천 숙소1</text></svg>
+	          </div>
+	        </div>
+	        <div class="col">
+	          <div class="card shadow-sm">
+	            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">비지니스 추천 숙소1</text></svg>
+	          </div>
+	        </div>
+	       </div>
+	      </div>
+	     </div>
+	  <div class="album py-5 bg-light">
+	    <div class="container">
+	      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-5">
+	        <div class="col">
+	          <div class="card shadow-sm">
+	            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">호텔 추천 숙소2</text></svg>
+	          </div>
+	        </div>
+	        <div class="col">
+	          <div class="card shadow-sm">
+	            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">펜션 추천 숙소2</text></svg>
+	          </div>
+	        </div>
+	        <div class="col">
+	          <div class="card shadow-sm">
+	            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">모텔 추천 숙소2</text></svg>
+	          </div>
+	        </div>
+	        <div class="col">
+	          <div class="card shadow-sm">
+	            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">가족형 추천 숙소2</text></svg>
+	          </div>
+	        </div>
+	        <div class="col">
+	          <div class="card shadow-sm">
+	            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">비지니스 추천 숙소2</text></svg>
+	          </div>
+	        </div>
+	       </div>
+	      </div>
+	     </div>
+	  <div class="album py-5 bg-light">
+	    <div class="container">
+	      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+	        <div class="col">
+	          <div class="card shadow-sm">
+	            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">이벤트 1</text></svg>
+	          </div>
+	        </div>
+	        <div class="col">
+	          <div class="card shadow-sm">
+	            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">이벤트 2</text></svg>
+	          </div>
+	        </div>
+	        <div class="col">
+	          <div class="card shadow-sm">
+	            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">이벤트 3</text></svg>
+	          </div>
+	        </div>
+	       </div>
+	      </div>
+	     </div>
+		<!-- 숙소구분별 -->
+	<div class="container">
+		<h3>형태별 추천 숙소</h3>
+	<nav class="nav justify-content-center">
+	  <a class="nav-link" href="#">호텔</a>
+	  <a class="nav-link" href="#">펜션</a>
+	  <a class="nav-link" href="#">모텔</a>
+	  <a class="nav-link" href="#">가족형</a>
+	  <a class="nav-link" href="#">비지니스</a>
+	</nav>
+	</div>
+		<!-- 세부지역별 -->
+	<div class="container">
+	<h3>지역별 추천숙소</h3>
+	<nav class="nav justify-content-center">
+	  <a class="nav-link" href="#">서울</a>
+	  <a class="nav-link" href="#">부산</a>
+	  <a class="nav-link" href="#">인천</a>
+	  <a class="nav-link" href="#">대구</a>
+	  <a class="nav-link" href="#">광주</a>
+	  <a class="nav-link" href="#">대전</a>
+	  <a class="nav-link" href="#">울산</a>
+	  <a class="nav-link" href="#">수원</a>
+	  <a class="nav-link" href="#">창원</a>
+	  <a class="nav-link" href="#">성남</a>
+	</nav>
+	</div>	
+</div>
+</body>
+</html>
